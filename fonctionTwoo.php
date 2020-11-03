@@ -1,6 +1,9 @@
 <?php
+function caract(){
 $caracter = $_GET['caracter'];
-
+echo strtolower($caracter);
+$result = mb_strtoupper($caracter);
+}
 ?>
 
 <!doctype html>
@@ -13,6 +16,7 @@ $caracter = $_GET['caracter'];
     <title>Document</title>
 </head>
 <body>
+<H1> <?= caract() ?></H1>
 <form method="GET" action="">
     <input type="text" name="caracter">
     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
