@@ -1,25 +1,11 @@
 <?php
 function palindrome($palindrome) {
-    $reversed = '';
-    $original = $palindrome;
-    $string = array();
-    $j = 0;
-    $converted = (string) $palindrome;
-    //var_dump($converted);
 
-    $palindrome = str_split($converted);
-    //var_dump($palindrome);
+    $palindrome = strtolower($palindrome); //force le str en minuscule
+   $reversed = strrev($palindrome);
 
-    $i = count($palindrome) - 1;
-
-    while($i >= 0) {
-        $string[$j] = $palindrome[$i];
-        $j++;
-        $i--;
-    }
-    $reversed = implode('', $string);
-    if($reversed === $original) {
-        echo 'palindrome ';
+    if($reversed === $palindrome) {
+        echo "c'est un palindrome";
         return TRUE;
     } else {
         echo 'pas un palindrome';
@@ -27,5 +13,7 @@ function palindrome($palindrome) {
     }
 }
 
-palindrome('bonjour');
+palindrome('Kayak');
+
 ?>
+
